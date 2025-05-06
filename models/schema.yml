@@ -8,7 +8,7 @@ sources:
         identifier: raw_gz_product
         description: table avec product_id e le purchase_price
         columns:
-          - name: product_id
+          - name: products_id
           - name: purchase_price
       - name: sales
         identifier: raw_gz_sales
@@ -19,7 +19,7 @@ sources:
         columns:
           - name: date_date
           - name: orders_id     
-          - name: product_id
+          - name: products_id
           - name: revenue
           - name: quantity
       - name: ship
