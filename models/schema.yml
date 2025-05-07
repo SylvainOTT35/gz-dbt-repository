@@ -34,5 +34,65 @@ sources:
           - name: shipping_fee
           - name: logcost
           - name: ship_cost
-          
+      - name: adword
+        identifier: raw_gz_adwords
+        description: données des campagnes sur la plateforme google ads
+        tests:
+          - unique:
+              column_name: "(date_date || '-' ||campaign_key)"
+        columns:
+          - name: date_date
+          - name: paid_source
+          - name: CAST (campaign-key,integer) as campaign_key
+          - name: camPGN_name as campaign_name
+          - name: CAST (ads_cost,FLOAT64) AS ads_cost
+          - name: impression
+          - name: click
+
+      - name: bing
+        identifier: raw_gz_bing
+        description: données des campagnes sur la plateforme bing
+        tests:
+          - unique:
+              column_name: "(date_date || '-' ||campaign_key)"
+        columns:
+          - name: date_date
+          - name: paid_source
+          - name: CAST (campaign-key,integer) as campaign_key
+          - name: camPGN_name as campaign_name
+          - name: CAST (ads_cost,FLOAT64) AS ads_cost
+          - name: impression
+          - name: click
+      
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: données des campagnes sur la plateforme sur facebook
+        tests:
+          - unique:
+              column_name: "(date_date || '-' ||campaign_key)"
+        columns:
+          - name: date_date
+          - name: paid_source
+          - name: CAST (campaign-key,integer) as campaign_key
+          - name: camPGN_name as campaign_name
+          - name: CAST (ads_cost,FLOAT64) AS ads_cost
+          - name: impression
+          - name: click
+
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: données des campagnes sur la plateforme sur criteo
+        tests:
+          - unique:
+              column_name: "(date_date || '-' ||campaign_key)"
+        columns:
+          - name: date_date
+          - name: paid_source
+          - name: CAST (campaign-key,integer) as campaign_key
+          - name: camPGN_name as campaign_name
+          - name: CAST (ads_cost,FLOAT64) AS ads_cost
+          - name: impression
+          - name: click
+
+
 
