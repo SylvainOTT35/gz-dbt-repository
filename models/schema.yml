@@ -34,7 +34,7 @@ sources:
           - name: shipping_fee
           - name: logcost
           - name: ship_cost
-      - name: adword
+      - name: adwords
         identifier: raw_gz_adwords
         description: données des campagnes sur la plateforme google ads
         tests:
@@ -43,7 +43,7 @@ sources:
         columns:
           - name: date_date
           - name: paid_source
-          - name: CAST (campaign-key,integer) as campaign_key
+          - name: campaign_key
           - name: camPGN_name as campaign_name
           - name: CAST (ads_cost,FLOAT64) AS ads_cost
           - name: impression
@@ -58,7 +58,7 @@ sources:
         columns:
           - name: date_date
           - name: paid_source
-          - name: CAST (campaign-key,integer) as campaign_key
+          - name: campaign_key
           - name: camPGN_name as campaign_name
           - name: CAST (ads_cost,FLOAT64) AS ads_cost
           - name: impression
@@ -73,7 +73,7 @@ sources:
         columns:
           - name: date_date
           - name: paid_source
-          - name: CAST (campaign-key,integer) as campaign_key
+          - name: campaign_key
           - name: camPGN_name as campaign_name
           - name: CAST (ads_cost,FLOAT64) AS ads_cost
           - name: impression
@@ -88,7 +88,7 @@ sources:
         columns:
           - name: date_date
           - name: paid_source
-          - name: CAST (campaign-key,integer) as campaign_key
+          - name: campaign_key
           - name: camPGN_name as campaign_name
           - name: CAST (ads_cost,FLOAT64) AS ads_cost
           - name: impression

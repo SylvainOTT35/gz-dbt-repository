@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'adword') }}
+    select * from {{ source('raw', 'adwords') }}
 
 ),
 
@@ -13,7 +13,7 @@ renamed as (
         paid_source,
         campaign_key,
         campgn_name as campaign_name,
-        cast(ads_cost as float64) as ads_cost,
+        CAST(ads_cost as float64) AS ads_cost
         impression,
         click
 
