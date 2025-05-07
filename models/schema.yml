@@ -1,0 +1,38 @@
+version: 2
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: base de donnees de greenweez donne par la teamfinance
+    tables:
+      - name: product
+        identifier: raw_gz_product
+        description: table avec product_id e le purchase_price
+        columns:
+          - name: products_id
+          - name: purchase_price
+      - name: sales
+        identifier: raw_gz_sales
+        description: tabl vente avec date et revenu (quantity) ect...
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+        columns:
+          - name: date_date
+          - name: orders_id     
+          - name: products_id
+          - name: revenue
+          - name: quantity
+      - name: ship
+        identifier: raw_gz_ship
+        columns:
+          - name: orders_id
+            description: primary key 
+            tests:
+              - unique
+              - not_null
+              
+          - name: shipping_fee
+          - name: logcost
+          - name: ship_cost
+          
+
